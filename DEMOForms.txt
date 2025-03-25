@@ -1,0 +1,110 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace FormulierenDemonstratie
+{
+    public partial class Form1 : Form
+    {
+        Fabriek f = new Fabriek();
+        public Form1()
+        {
+            InitializeComponent();
+            label1.Text = "fred";
+        }
+
+        private void felix_Click(object sender, EventArgs e)
+        {
+            felix.Text = "Veranderd";
+            f.Name = textBox1.Text;
+            label1.Text = "Onze Fabriek: " + f.Name;
+            label2.Text = f.zomaarProberen();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label1.Text = "" + f.verkopen();
+            checkBox1.Checked = f.gesloten;
+            for(int x = 0; x < f.trappen.Count(); x++)
+            {
+                listBox1.Items.Add(f.trappen[x].brand);
+
+            }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label1.Text = listBox1.SelectedIndex.ToString();
+        }
+    }
+}
+
+===============================================
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FormulierenDemonstratie
+{
+    internal class Fabriek
+    {
+        public String Name;
+        public int verkocht = 0;
+        public bool gesloten = true;
+        public Trap[] trappen = new Trap[6];   
+
+        public int verkopen() {
+            trappen[0] = new Trap("Wenteltrap");
+            trappen[1] = new Trap("KantelTrap");
+            trappen[2] = new Trap("DubbelTrap");
+            trappen[3] = new Trap("GoTrap");
+            trappen[4] = new Trap("HoutenTrap");
+            trappen[5] = new Trap("JouwTrap");
+            verkocht++;
+            return verkocht;
+        }
+        public String zomaarProberen() {
+            int x = 34;
+            x += 15;
+            Trap t = new Trap("VermeulenTrappen");
+            String returnString = t.Verkoop();
+            return returnString + x;
+        }
+    }
+}
+
+
+
+==================================
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FormulierenDemonstratie
+{
+    internal class Trap
+    {
+        public string brand;
+        public Trap(string merk) {
+            brand = merk; 
+        }
+        public string Verkoop() {
+            return brand + "is verkocht";
+        }
+    }
+}
