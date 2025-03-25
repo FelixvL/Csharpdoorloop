@@ -18,20 +18,51 @@ namespace abc{
             camzagenkl1.schrijfBestand();
             camfrasenkl2.schrijfBestand();
 
-            Machine m = new FreesMachine();
+            FreesMachine m = new FreesMachine();
+            m.MesLeverancier = "Kees";
             m.Serienummer = "Frees8342";
             m.huidigBestand = camfrasenkl2;
             m.uitvoeren();
+
+            int[] getall = new int[6];
+            Machine[] machines = new Machine[6];
+            machines[0] = new FreesMachine();
+            
             Reparateur ronald = new Reparateur();
             ronald.repareren(m);
+            Trap t1 = new Trap();
+            WentelTrap t2 = new WentelTrap();
+            Console.Write(Trap.a);
+            
+            t2.b = 8;
+
+            t1.toonTrap();
+            t2.toonTrap();
+
 
         }
-
-
-    
     }
+    class Trap {
+        public const int a = 5;
+
+        public void toonTrap() {
+            Console.WriteLine("" + a + "");
+        }
+    }
+    class WentelTrap : Trap {
+        public int b;
+        public void toonTrap()
+        {
+            Console.WriteLine("" + a + ""+b);
+        }
+    }
+
+
+
+
     class Reparateur {
         public void repareren(Machine m) {
+           // m.MesLeverancier = "Kees";
             Console.WriteLine("FIXEN"+m.Serienummer);
         }
     }
