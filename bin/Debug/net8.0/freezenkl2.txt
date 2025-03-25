@@ -1,2 +1,5 @@
 freezen;schuur2cm;
 naschuren
+
+uitslijpen 40cm
+

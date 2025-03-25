@@ -30,7 +30,7 @@ namespace abc
             Console.WriteLine("======"+ bestandsnaam + "=== beschreven ==");
         }
         internal void VoegInstructieToe() {
-            Console.WriteLine("+++++++++\nHuidige Inhoud:");
+            Console.WriteLine("+++++++++\nHuidige Inhoud "+bestandsnaam+" :");
             Console.WriteLine(instructietext);
             Console.WriteLine("Voer in: ");
             String instructie = Console.ReadLine();
