@@ -5,11 +5,17 @@ namespace abc{
     class Program {
         public static void Main(string[] args) {
             CAMBestand camzagenkl1 = new CAMBestand("houtzagenkl1.txt");
-            camzagenkl1.instructietext = "ffzagen;hakken4cm;";
             camzagenkl1.toonInhoud();
             CAMBestand camfrasenkl2 = new CAMBestand("freezenkl2.txt");
-            camfrasenkl2.instructietext = "freezen;schuur2cm;";
             camfrasenkl2.toonInhoud();
+
+
+            camzagenkl1.VoegInstructieToe();
+            camzagenkl1.VoegInstructieToe();
+            camfrasenkl2.VoegInstructieToe();
+
+            camzagenkl1.schrijfBestand();
+            camfrasenkl2.schrijfBestand();
 
             Persoon p = new Persoon();
             p.Voornaam = "fred";
