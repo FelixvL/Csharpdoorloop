@@ -20,9 +20,25 @@ namespace abc{
             t.Merk = "Iphone";
             p.mijnTelefoon = t;
             p.voorstellen();
-
+            Dier d = new Konijn();
+            Konijn k = new Konijn();
+            k.lengteknaagtand = 4;
+            k.hartslag = 25;
+            k.voortbewegen();
 
         }
+
+
+        class Dier {  // base klasse super klasse  parent class
+            public int hartslag;
+            public void voortbewegen() {
+                Console.WriteLine("voortbewegen in dier");
+            }
+        }
+        class Konijn : Dier { // Is a relatie   subklasse child class
+            public int lengteknaagtand;
+        }
+
 
         class Telefoon {
             public String Merk { get; set; }
