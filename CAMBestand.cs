@@ -14,11 +14,14 @@ namespace abc
 
         public CAMBestand(string hout){
             bestandsnaam = hout;
-            Console.WriteLine("er is een cambestand aangemaakt");
+            Console.WriteLine("Er is een cambestand aangemaakt: "+hout);
         }
 
         internal void toonInhoud() {
-            Console.WriteLine(instructietext);
+            Console.WriteLine("Inhoud file: "+ bestandsnaam +" \n"+instructietext);
+            Console.WriteLine();
+            Console.WriteLine("===========");
+            Console.WriteLine();
         }
     }
 }
